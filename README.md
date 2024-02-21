@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install the dependencies.
+Install the dependencies
 
 ```
 sudo rosdep init

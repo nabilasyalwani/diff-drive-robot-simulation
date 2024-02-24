@@ -131,8 +131,8 @@
   </link>
   <gazebo reference="front_caster">
     <material>Gazebo/Black</material>
-    <mu1 value="0.01"/>
-    <mu2 value="0.01"/>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
   </gazebo>
 
   <joint name="caster_joint" type="fixed">

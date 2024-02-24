@@ -58,8 +58,8 @@
     <xacro:box_inertia m="15" w="${base_width}" d="${base_length}" h="${base_height}"/>
   </link>
 
-  <gazebo reference="base_link">
-    <material>Gazebo/White</material>
+    <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
   </gazebo>
   
    <!-- Robot Footprint -->
@@ -129,9 +129,8 @@
     <xacro:sphere_inertia m="0.5" r="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
     
   </link>
-
   <gazebo reference="front_caster">
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
     <mu1 value="0.01"/>
     <mu2 value="0.01"/>
   </gazebo>
@@ -243,8 +242,8 @@
       <wheel_diameter>0.2</wheel_diameter>
 
       <!-- limits -->	
-      <max_wheel_torque>20</max_wheel_torque>
-      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <max_wheel_torque>200</max_wheel_torque>
+      <max_wheel_acceleration>10.0</max_wheel_acceleration>
 
       <!-- output -->
       <publish_odom>true</publish_odom>
@@ -317,11 +316,6 @@
       </plugin>
     </sensor>
   </gazebo>0
-  <gazebo reference="lidar_link">
-    <mu1>0.01</mu1>
-    <mu2>0.01</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
   
   <link name="camera_link">
     <visual>
@@ -394,10 +388,5 @@
         <hackBaseline>0</hackBaseline>
       </plugin>
     </sensor>
-  </gazebo>
-  <gazebo reference="camera_link">
-    <mu1>0.01</mu1>
-    <mu2>0.01</mu2>
-    <material>Gazebo/Red</material>
   </gazebo>
 </robot>

@@ -10,14 +10,23 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 add_executable(robot_controller src/robotcontroller.cpp)
 ament_target_dependencies(robot_controller rclcpp geometry_msgs)
 
+add_executable(PID_controller src/PID_controller.cpp)
+ament_target_dependencies(PID_controller rclcpp geometry_msgs nav_msgs)
+
+add_executable(file_handling src/filehandling.cpp)
+ament_target_dependencies(file_handling rclcpp geometry_msgs nav_msgs)
+
 install(TARGETS
   robot_controller
+  PID_controller
+  file_handling
   DESTINATION lib/${PROJECT_NAME})
 
 install(
